@@ -1,0 +1,50 @@
+TITLE: FOODIE FINDER PRE PROJECT
+
+Author name: Mitchell Poynter
+Date: Jan 7 2018
+
+Synopsis: This program finds restraunts near an input location and 
+    displays information such as price level and address.  To operate,
+    download the files and use a browser add on to enable cross origin 
+    resource sharing.  Load the page on a local host server and 
+    input approximate location in the search bar.  Click the button
+    next to the search bar twice to display a map of the area and
+    restaurants and info below the map.  While the code does store the
+    geographic location of nearby restaurants, they are not displayed 
+    on the map (see refleciton section).
+
+Execution: This program was written with create-react-app. It consists 
+    of one react component, App.js, that encompasses all of the functionality.  
+    Styling of this component is done in App.css and the rendering is done 
+    in index.js. When the user inputs a city and presses the nearby button twice, 
+    google maps api is called to geocode the location and return the 
+    longitude and latitude of the input location. These values are saved to 
+    the state of the App component, and leaflet is used to render a map using 
+    the saved location. Google place search api is then used to find 
+    nearby restaurants, saving their names, wether or not they are open, their
+    price level, and their address, displaying this information below the map. If 
+    information is not being displayed below the map, make sure that an access 
+    control allow origin header is present.  I used CORS. I used postman to check
+    the api results and react developer tools to help with troubleshooting. I used
+    a bootstrap table to input the restaurant information objects and format them
+    into columns.
+
+Reflection: My first improvement would be to display markers on the map using the
+    saved longitudes and latitudes in the state of the App component. I believe this
+    could be done by mapping through the array in the render function of App and 
+    calling creating a marker for each set of coordinates; however, I was not able to 
+    get this to work. Another clear improvement would be to sparate the parts of 
+    this web app into different components. This would greatly improve 
+    readability and most likely contributed to why I was not able to include 
+    markers. I made the mistake of including the first few elements in the same
+    component; when I realized I should be separating components, I concluded that 
+    I was more confident I could complete the project within the timeline by 
+    limiting to one component.  I chose to only include restaurants (not bars)
+    because irrelevant establishments such as libraries were sometimes
+    returned when I included bars. I chose to only comment out the console.log() 
+    functions so that the small amount of testing I did is evident.
+    
+    On a positive note, I am extremely pleased with what I learned from this project.
+    My web development knowledge started at zero, and now I understand some very
+    key elements of how the web operates. I can see the appeal of coding in react, and
+    I am excited to further improve my skills. 
